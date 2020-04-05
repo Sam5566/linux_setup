@@ -1,0 +1,255 @@
+" .vimrc
+" Fisa-vim-config
+" http://fisadev.github.io/fisa-vim-config/
+" Modified version: 8.2  by Sheng-Jun Lin, Kuan-Hsien Wu
+
+" ============================================================================
+" Vim-plug initialization
+" Avoid modify this section, unless you are very sure of what you are doing
+
+let vim_plug_just_installed = 0
+let vim_plug_path = expand('~/.vim/autoload/plug.vim')
+if !filereadable(vim_plug_path)
+    echo "Installing Vim-plug..."
+    echo ""
+    silent !mkdir -p ~/.vim/autoload
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    let vim_plug_just_installed = 1
+endif
+
+" manually load vim-plug the first time
+if vim_plug_just_installed
+    :execute 'source '.fnameescape(vim_plug_path)
+endif
+
+" Obscure hacks done, you can now modify the rest of the .vimrc as you wish :)
+
+" ============================================================================
+" Active plugins
+" You can disable or add new ones here:
+
+" this needs to be here, so vim-plug knows we are declaring the plugins we
+" want to use
+call plug#begin('~/.vim/plugged')
+
+" Plugins from github repos:
+"*************************************************
+
+" vim-powerline
+Plug 'powerline/powerline'
+" Code commenter
+Plug 'scrooloose/nerdcommenter'
+" Class/module browser
+Plug 'majutsushi/tagbar'
+" Better file browser
+Plug 'scrooloose/nerdtree'
+" Paint css colors with the real color
+Plug 'lilydjwg/colorizer'
+" Rainbow parentheses
+Plug 'luochen1990/rainbow'
+" Commentary
+"Plug 'tpope/vim-commentary'
+" Bracket Surround
+"Plug 'tpope/vim-surround'
+" Indent Line
+Plug 'Yggdroot/indentLine'
+" Syntax check
+Plug 'scrooloose/syntastic'
+" Tabs
+Plug 'kien/tabman.vim'
+" Auto completion
+"Plug 'ycm-core/YouCompleteMe'
+
+" Plugins from github/vim-scripts repos:
+"*************************************************
+
+" Search results counter
+Plug 'vim-scripts/IndexedSearch'
+
+"*************************************************
+
+" Tell vim-plug we finished declaring plugins, so it can load them
+call plug#end()
+
+" ============================================================================
+" Install plugins the first time vim runs
+
+if vim_plug_just_installed
+    echo "Installing Bundles, please ignore key map error messages"
+    :PlugInstall
+endif
+
+" ============================================================================
+" Plugins settings and mappings
+" Edit them as you wish.
+
+" Powerline-status ---------------------
+" (1) sudo intall vim-powerline (Fedora)
+" (2) sudo apt-get install powerline (Ubuntu)
+" (3) activate manually
+"	- python3 from powerline.vim import setup as powerline_setup
+"	- python3 powerline_setup()
+"	- python3 del powerline_setup
+
+" vim-powerline-------------------------
+set laststatus=2 " Always display the statusline in all windows
+set showtabline=2 " Always display the tabline, even if there is only one tab
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+
+" Tagbar -------------------------------
+" autofocus on tagbar open
+let g:tagbar_autofocus = 1
+" toggle tagbar display
+map <F4> :TagbarToggle<CR>
+
+" NERDTree -----------------------------
+" auto turn on NERDTree
+" autocmd vimenter * NERDTree
+" toggle nerdtree display
+map <F3> :NERDTreeToggle<CR>
+" open nerdtree with the current file selected
+nmap ,t :NERDTreeFind<CR>
+" don;t show these file types
+let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
+
+" Rainbow parentheses ------------------
+" don;t enable when start up
+let g:rainbow_active = 1
+"map <F5> :RainbowToggle<CR>
+
+" Indent Line --------------------------
+let g:indentLine_enabled = 0
+let g:indentLine_char='¦'
+
+" Commentary ---------------------------
+autocmd FileType python,shell set commentstring=#\ %s
+autocmd FileType mako set cms=##\ %s
+
+" Syntastic ----------------------------
+let g:syntastic_error_symbol = '✘'
+let g:syntastic_warning_symbol = "▲"
+
+augroup mySyntastic
+    au!
+    au FileType tex let b:syntastic_mode = "passive"
+augroup END
+
+" End of fisa-vim-config
+" ============================================================================
+"
+
+"VIM Setting -----------------------------
+"
+syntax enable
+set nu
+set ruler
+set confirm
+set incsearch
+set cursorline
+set cursorcolumn
+set nocompatible
+set mouse=i
+" Fold Setting ---------------------------
+
+set foldenable
+set foldmethod=manual
+
+" Tab Setting -----------------------------
+
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+filetype plugin indent on
+autocmd FileType python setlocal et sta sw=4 sts=4
+
+" Font Setting ---------------------------
+
+syntax on
+:highlight Comment ctermfg=Green
+
+" when scrolling, keep cursor 2 lines away from screen border
+set scrolloff=2
+" More natural split opening
+set splitbelow
+set splitright
+
+" Vim Background - Gruvbox theme ----------
+" Colorcheme gruvbox: https://github.com/morhetz/gruvbox
+"
+set t_Co=256
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
+set bg=dark
+" hi command must be entered after colorscheme
+hi LineNr cterm=bold ctermfg=DarkGrey ctermbg=NONE
+hi CursorLineNr cterm=bold ctermfg=Green ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE
+
+" Function - Suggestion in VIM ------------
+
+set completeopt+=longest
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
+inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
+inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
+
+" Function - Autoremove white space in end of line
+" - Remove trailing whitespace when writing a buffer, but not for diff files.
+" - From Vigil <vim5632@rainslide.net>
+function RemoveTrailingWhitespace()
+    if &ft != "diff"
+        let b:curcol = col(".")
+        let b:curline = line(".")
+        silent! %s/\s\+$//
+        silent! %s/\(\s*\n\)\+\%$//
+        call cursor(b:curline, b:curcol)
+    endif
+endfunction
+autocmd BufWritePre * call RemoveTrailingWhitespace()
+
+" VIM Mapping ----------------------------------
+
+" keymap in normal mode pre-set
+nnoremap <F1> :tabprevious<CR>:echo "PREVIOUS TAB"<CR>
+nnoremap <F2> :tabnext<CR>:echo "NEXT TAB"<CR>
+nnoremap <F5> :set number!<CR>:echo "Toggle Line Number"<CR>
+nnoremap <F6> :set relativenumber!<CR>:echo "Toggle Rel Line Number"<CR>
+nnoremap <F7> :set foldcolumn=6<CR>:echo "Foldcolumn ON"<CR>
+nnoremap <F8> :set foldcolumn=0<CR>:echo "Foldcolumn OFF"<CR>
+nnoremap <tab><tab> :TMToggle<CR>:echo "TMToggle"<CR>
+nnoremap <space> za
+nnoremap <C-F> :mkview<CR>:echo "Setting Saved ..."<CR>
+nnoremap <C-L> :loadview<CR>:echo "Setting Loaded ..."<CR>
+nnoremap <C-H> :hi Comment ctermfg=14<CR>:echo "Hi-Comment ON"<CR>
+nnoremap <C-O> :hi Comment ctermfg=245<CR>:echo "Hi-Comment OFF"<CR>
+
+" suggested input keymap from present unfinished words
+inoremap `` <c-p>
+" suggested input keymap from previous finished words
+inoremap `1 <c-n>
+" keymap in insert mode pre-set
+inoremap <F1> <Esc>:tabprevious<CR>:echo "PREVIOUS TAB"<CR>i
+inoremap <F2> <Esc>:tabnext<CR>:echo "NEXT TAB"<CR>i
+inoremap <F5> <Esc>:set number!<CR>:echo "Toggle Line Number"<CR>i
+inoremap <F6> <Esc>:set relativenumber!<CR>:echo "Toggle Rel Line Number"<CR>i
+inoremap {{ {}<esc>i
+inoremap {<cr> {<cr>}<esc>i
+inoremap << <><esc>i
+inoremap <> </><esc>i
+inoremap '' ''<esc>i
+inoremap "" ""<esc>i
+inoremap ''' '''<cr>'''<esc>i<esc>i<esc>i
+inoremap """ """<cr>"""<esc>i<esc>i<esc>i
+
+" Run python script in vim
+" # Test python version that want (In python)
+" import sys
+" print(sys.version_info)
+autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+"autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python2' shellescape(@%, 1)<CR>
+"autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python2' shellescape(@%, 1)<CR>
