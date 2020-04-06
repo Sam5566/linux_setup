@@ -4,3 +4,5 @@ wget -c https://root.cern/download/root_v6.20.04.Linux-ubuntu18-x86_64-gcc7.5.ta
 
 cd ~/linux_setup
 #Reminder: if want the newest version of root, please go to "https://root.cern.ch/downloading-root"
+cp settingfiles/start_root.sh ~/
+cp settingfiles/root_hist_common_setting.h ~/root/include/

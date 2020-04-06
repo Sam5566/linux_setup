@@ -66,7 +66,7 @@ There are many flie in folder **setup_code** and **settingfiles** and they are s
 * C++: installation of compiler
 	* gcc
 * mathematica: Installation (need to be verified with code)
-* root: Installation and presetting
+* root: Installation (version 6.20) and presetting
 	* my own **.rootrc**
 	* my own plotting header's file or code
 * system
