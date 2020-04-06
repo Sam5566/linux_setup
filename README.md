@@ -15,6 +15,7 @@ sudo apt-get install git
 ```
 Clone the files here
 ```bash
+cd ~/
 git clone https://github.com/Sam5566/linux_setup.git
 ```
 #### select the app or setup you want to use
@@ -22,7 +23,7 @@ see [Selection](https://github.com/Sam5566/linux_setup#selection)
 
 #### run the shell file
 ```bash
-cd ~/linux_setup
+cd linux_setup
 source cmake.sh
 ```
 #### failure
