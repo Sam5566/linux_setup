@@ -22,6 +22,7 @@ see [Selection](https://github.com/Sam5566/linux_setup#selection)
 
 #### run the shell file
 ```bash
+cd ~/linux_setup
 source cmake.sh
 ```
 #### failure
@@ -31,7 +32,7 @@ If there is a code that does not run successfully, it will generate **setup_logs
 run `check.sh` to find out those unsucessful setup after restart your computer.
 
 ## Selection
-There are many flie in folder **setup_code** and **settingfiles**, they are
+There are many flie in folder **setup_code** and **settingfiles** and they are show below. If you do not want such app/setup just remove the file with the same name from those folder.
 
 * terminal: to make the terminal more beautiful, more easy to look and help user execute the shell
 	* zsh
