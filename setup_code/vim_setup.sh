@@ -1,4 +1,5 @@
-cp Dropbox/settingfiles/vim ~/.vim
-cp Dropbox/settingfiles/vimrc ~/.vimrc
+sudo apt-get install vim
+cp settingfiles/vim ~/.vim
+cp settingfiles/vimrc ~/.vimrc
 
 echo FINISH
