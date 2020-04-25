@@ -51,10 +51,20 @@ There are many flie in folder **setup_code** and **settingfiles** and they are s
 	* Numpy
 	* Matplotlib
 	* SciPy
-* python2: installation of the Python 3 (to-updated) and the packages of
+    * ipython
+    * jupyter
+    * pandas
+    * sympy
+    * nose
+* python3: installation of the Python 3 (to-updated) and the packages of
 	* Numpy
 	* Matplotlib
 	* SciPy
+    * ipython
+    * jupyter
+    * pandas
+    * sympy
+    * nose
 * anaconda: installation of Anaconda and Python 3 (to-updated) and the packages of
 	* Numpy
 	* Matplotlib
@@ -70,5 +80,5 @@ There are many flie in folder **setup_code** and **settingfiles** and they are s
 	* my own **.rootrc**
 	* my own plotting header's file or code
 * system
-
+    * ssh
 * application(app)
