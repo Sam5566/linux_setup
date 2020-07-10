@@ -71,10 +71,8 @@ There are many flie in folder **setup_code** and **settingfiles** and they are s
 	* SciPy
 	* keras
 	* tensorflow
-* C: installation of compiler
-	* gcc
-* C++: installation of compiler
-	* gcc
+* C: installation of compiler (already include in the OS initially)
+
 * mathematica: Installation (need to be verified with code)
 * root: Installation (version 6.20) and presetting
 	* my own **.rootrc**
@@ -82,3 +80,8 @@ There are many flie in folder **setup_code** and **settingfiles** and they are s
 * system
     * ssh
 * application(app)
+    * cmake
+    
+* library
+    * boost
+    * GSL
