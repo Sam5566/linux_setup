@@ -11,7 +11,7 @@ sudo apt-get update
 ```
 Download git first
 ```bash
-sudo apt-get install git
+sudo apt-get -y install git
 ```
 Clone the files here
 ```bash
