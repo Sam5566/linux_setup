@@ -33,7 +33,7 @@ If there is a code that does not run successfully, it will generate **setup_logs
 run `check.sh` to find out those unsucessful setup after restart your computer.
 
 ## Selection
-There are many flie in folder **setup_code** and **settingfiles** and they are show below. If you do not want such app/setup just remove the file with the same name from those folder.
+There are many flie in folder **setup_code** and **settingfiles** and they are show below. If you do not want such app/setup just remove the file with the same name from those folder. If something you don't want is only a part of the file, just go into that setup file and comment the line. Each part of installation should be seperated and easy to reconized.
 
 * terminal: to make the terminal more beautiful, more easy to look and help user execute the shell
 	* zsh
@@ -71,7 +71,7 @@ There are many flie in folder **setup_code** and **settingfiles** and they are s
 	* SciPy
 	* keras
 	* tensorflow
-* C: installation of compiler (already include in the OS initially)
+* GCC: installation of compiler (already include in system_setup: build-essential, the shell script here is to only install GCC)
 
 * mathematica: Installation (need to be verified with code)
 * root: Installation (version 6.20) and presetting
@@ -79,9 +79,17 @@ There are many flie in folder **setup_code** and **settingfiles** and they are s
 	* my own plotting header's file or code
 * system
     * ssh
-* application(app)
+    * build-essential (including libc6-dev, libc-dev, gcc, g++, make, dpkg-dev)
     * cmake
-    
+* application(app)
+    * datathief
+    * Dropbox
+    * Onedrive
+    * Google Drive
 * library
     * boost
     * GSL
+* High Energy Physics analysis packages
+    * MadGraph (version: MG5_aMC_v2_6_7)
+    * GMCalc (version: 1.41)
+    * HEPfit
