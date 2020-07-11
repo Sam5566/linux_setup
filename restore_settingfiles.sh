@@ -5,7 +5,7 @@ cp ~/.zshrc settingfiles/zshrc
 
 ## vim
 cp -r ~/.vim settingfiles/vim
-cp ~.vimrc settingfiles/vimrc
+cp ~/.vimrc settingfiles/vimrc
 
 ## root
 cp

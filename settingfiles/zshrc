@@ -96,10 +96,30 @@ alias vimconfig="vim ~/.vimrc"
 alias ansibleconfig="vim ~/.ansible/ansible.cfg"
 alias grep='grep --color=auto'
 
+# personal alias
+## vim
+alias vimx="gnome-terminal -- vim"
+
+## madgraph
+alias madgraph="source ~/start_madgraph.sh"
+
+## start root
+alias start_root="source ~/Downloads/root/bin/thisroot.sh"
 
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
+BATPREFIX="/bat/install/prefix"
+export PATH="$BATPREFIX/bin:$PATH"
+export LD_LIBRARY_PATH="$BATPREFIX/lib:$LD_LIBRARY_PATH"
+export CPATH="$BATPREFIX/include:$CPATH"
+export PKG_CONFIG_PATH="$BATPREFIX/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+# GSL
+export C_INCLUDE_PATH=$C_INCLUDE_PATH:/home/sam/local/gsl2.6/include
+export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/home/sam/local/gsl2.6/include
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH::/home/sam/local/gsl2.6/lib
+export LIBRARY_PATH=$LIBRARY_PATH::/home/sam/local/gsl2.6/lib
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
