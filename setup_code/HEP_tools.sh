@@ -33,6 +33,3 @@ wget -c https://launchpad.net/mg5amcnlo/2.0/2.7.x/+download/MG5_aMC_v2.7.3.tar.g
 
 
 echo FINISH
-echo ----------------------------------
-echo ----------------------------------
-echo ----------------------------------

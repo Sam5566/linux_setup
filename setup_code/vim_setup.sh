@@ -4,6 +4,3 @@ cp -r settingfiles/vim ~/.vim
 cp settingfiles/vimrc ~/.vimrc
 
 echo FINISH
-echo -----------------------------------
-echo -----------------------------------
-echo -----------------------------------

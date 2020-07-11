@@ -23,6 +23,3 @@ python3 -m pip install --user numpy scipy matplotlib ipython jupyter pandas symp
 
 
 echo FINISH
-echo --------------------------------------
-echo --------------------------------------
-echo --------------------------------------
