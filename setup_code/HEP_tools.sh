@@ -14,9 +14,25 @@ cd ~/linux_setup
 cp settingfiles/start_root.sh ~/
 cp settingfiles/root_hist_common_setting.h ~/HEP_tools/root/include/
 
+# check executable
+echo ----------------------------
+echo try to open root
+start_root
+root -q
+echo ----------------------------
+
 
 # MadGraph
+cd ~/Download
+
+wget -c https://launchpad.net/mg5amcnlo/2.0/2.7.x/+download/MG5_aMC_v2.7.3.tar.gz -O - | tar -xz -C ~/HEP_tools
 
 # GMCalc
 
 # HEPfit
+
+
+echo FINISH
+echo ----------------------------------
+echo ----------------------------------
+echo ----------------------------------

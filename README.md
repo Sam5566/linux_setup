@@ -26,11 +26,12 @@ see [Selection](https://github.com/Sam5566/linux_setup#selection)
 cd linux_setup
 source cmake.sh
 ```
-#### failure
-If there is a code that does not run successfully, it will generate **setup_logs.txt** to print the error messages.
-
 #### check
-run `check.sh` to find out those unsucessful setup after restart your computer.
+If all you want in **setup_code** are installed or cloned sucessfully, the check part will start automatically to make sure again all of them can be called. As long as the installation is without problem, it shows "pass" in the terminal. No matter the installation is sucessful or not, all messages will go into **setup_logs.txt**.
+This can be done in **linux setup** by
+```bash
+source check.sh
+```
 
 ## Selection
 There are many flie in folder **setup_code** and **settingfiles** and they are show below. If you do not want such app/setup just remove the file with the same name from those folder. If something you don't want is only a part of the file, just go into that setup file and comment the line. Each part of installation should be seperated and easy to reconized.
@@ -74,9 +75,13 @@ There are many flie in folder **setup_code** and **settingfiles** and they are s
 * GCC: installation of compiler (already include in system_setup: build-essential, the shell script here is to only install GCC)
 
 * mathematica: Installation (need to be verified with code)
-* root: Installation (version 6.20) and presetting
-	* my own **.rootrc**
-	* my own plotting header's file or code
+* HEP_tools: High Energy Physics analysis packages
+    * root: (version 6.20)
+        * my own **.rootrc**
+        * my own plotting header's file or code
+    * MadGraph (version: MG5_aMC_v2_6_7)
+    * GMCalc (version: 1.41)
+    * HEPfit
 * system
     * ssh
     * build-essential (including libc6-dev, libc-dev, gcc, g++, make, dpkg-dev)
@@ -89,7 +94,3 @@ There are many flie in folder **setup_code** and **settingfiles** and they are s
 * library
     * boost
     * GSL
-* High Energy Physics analysis packages
-    * MadGraph (version: MG5_aMC_v2_6_7)
-    * GMCalc (version: 1.41)
-    * HEPfit
