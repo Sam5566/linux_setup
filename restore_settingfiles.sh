@@ -8,3 +8,4 @@ cp -r ~/.vim settingfiles/vim
 cp ~.vimrc settingfiles/vimrc
 
 ## root
+cp
