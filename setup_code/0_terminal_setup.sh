@@ -11,7 +11,7 @@ sudo apt-get -y install powerline
 mkdir ~/ohmyzsh/packages
 
 echo "    getting powerlevel9k..."
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k 
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 
 echo "    getting powerlevel10k..."
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
@@ -26,9 +26,10 @@ echo "    getting zsh-syntax-highlighting..."
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
 echo "    getting zsh-autosuggestions..."
-git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions 
+git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 
 echo "    setting .zshrc..."
 cp settingfiles/zshrc ~/.zshrc
 
+source ~/.zshrc
 echo FINISH
