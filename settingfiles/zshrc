@@ -101,10 +101,10 @@ alias grep='grep --color=auto'
 alias vimx="gnome-terminal -- vim"
 
 ## madgraph
-alias madgraph="source ~/start_madgraph.sh"
+alias madgraph="source ~/HEP_tools/zshconfig/start_madgraph.sh"
 
 ## start root
-alias start_root="source ~/Downloads/root/bin/thisroot.sh"
+alias start_root="source ~/HEP_tools/root/bin/thisroot.sh"
 
 # User configuration
 
