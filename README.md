@@ -26,6 +26,11 @@ see [Selection](https://github.com/Sam5566/linux_setup#selection)
 cd linux_setup
 source cmake.sh
 ```
+or you already have package **make**, try
+```bash
+cd linux_setup
+make
+```
 #### check
 If all you want in **setup_code** are installed or cloned sucessfully, the check part will start automatically to make sure again all of them can be called. As long as the installation is without problem, it shows "pass" in the terminal. No matter the installation is sucessful or not, all messages will go into **setup_logs.txt**.
 This can be done in **linux setup** by
