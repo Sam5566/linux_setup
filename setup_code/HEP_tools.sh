@@ -3,16 +3,16 @@ mkdir ~/HEP_tools
 mkdir ~/HEP_tools/zshconfig
 
 # root
-#echo "    Getting root..."
+echo "    Getting root..."
 
-#cd ~/Downloads
+cd ~/Downloads
 
-#wget -c https://root.cern/download/root_v6.20.04.Linux-ubuntu18-x86_64-gcc7.5.tar.gz -O - | tar -xz -C ~/HEP_tools
+wget -c https://root.cern/download/root_v6.20.04.Linux-ubuntu18-x86_64-gcc7.5.tar.gz -O - | tar -xz -C ~/HEP_tools
 
-#cd ~/linux_setup
+cd ~/linux_setup
 ##Reminder: if want the newest version of root, please go to "https://root.cern.ch/downloading-root"
 
-#cp settingfiles/root_hist_common_setting.h ~/HEP_tools/root/include/
+cp settingfiles/root_hist_common_setting.h ~/HEP_tools/root/include/
 
 # check Root
 echo ----------------------------
