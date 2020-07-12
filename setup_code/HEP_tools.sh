@@ -1,6 +1,6 @@
 echo "    Create Directory: HEP_tools in ~/"
 mkdir ~/HEP_tools
-
+mkdir ~/HEP_tools/zshconfig
 
 # root
 echo "    Getting root..."
@@ -28,7 +28,7 @@ cd ~/Download
 wget -c https://launchpad.net/mg5amcnlo/2.0/2.7.x/+download/MG5_aMC_v2.7.3.tar.gz -O - | tar -xz -C ~/HEP_tools
 
 cd ~/linux_setup
-cp setting_files/start_madgraph.sh ~/HEP_tools/zshconfig/
+cp settingfiles/start_madgraph.sh ~/HEP_tools/zshconfig/
 # GMCalc
 
 # HEPfit
