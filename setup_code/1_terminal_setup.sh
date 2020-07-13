@@ -23,10 +23,10 @@ cd ~/ohmyzsh/custom/plugins/autojump
 cd ~/linux_setup
 
 echo "    getting zsh-syntax-highlighting..."
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/ohmyzsh/custom/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 echo "    getting zsh-autosuggestions..."
-git clone git://github.com/zsh-users/zsh-autosuggestions ~/ohmyzsh/custom/plugins/zsh-autosuggestions
+git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
 echo "    setting .zshrc..."
 cp settingfiles/zshrc ~/.zshrc

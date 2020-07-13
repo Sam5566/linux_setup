@@ -7,12 +7,12 @@ echo "    Getting root..."
 
 cd ~/Downloads
 
-echo "which version of Ubuntu do you have?"
+echo "which version of Ubuntu do you have? 18 or 20"
 read ans
-if [ $ans -eq 18.04 ];
+if [ $ans -eq 18 ];
 then
     wget -c https://root.cern/download/root_v6.20.04.Linux-ubuntu18-x86_64-gcc7.5.tar.gz -O - | tar -xz -C ~/HEP_tools
-elif [ $ans -eq 20.04 ];
+elif [ $ans -eq 20 ];
 then
     wget -c https://root.cern/download/root_v6.22.00.Linux-ubuntu20-x86_64-gcc9.3.tar.gz -O - | tar -xz -C ~/HEP_tools
 else
@@ -48,11 +48,11 @@ cp settingfiles/start_madgraph.sh ~/HEP_tools/zshconfig/
 # check MadGraph
 echo ---------------------------------------------------------------------
 echo "    Change MadGraph directory from MG5_aMC_vx_x_x to MG5_aMC"
-echo "	  The version of MadGraph can find in the file in the Dir."
-echo ******************************************************
+echo "    The version of MadGraph can find in the file in the Dir."
+echo "******************************************************"
 echo -e "\033[31m You need to check Madgraph installation in other terminal\033[0m"
 echo -e "\033[31m please check it by yourshelf.\033[0m"
-echo ******************************************************
+echo "******************************************************"
 
 # GMCalc
 
