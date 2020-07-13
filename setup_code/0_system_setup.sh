@@ -28,7 +28,7 @@ echo "    installing CMake..."
 
 sudo apt install -y cmake
 echo -----------------------------------
-cmake -v
+cmake --version
 echo -----------------------------------
 
 echo FINISH
