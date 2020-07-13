@@ -1,5 +1,5 @@
 # please run this program in $HOME/linux_setup with command "make"
-
+SHELL := /bin/bash
 DIR = setup_code
 FILES = ${DIR}/*.sh
 all:
