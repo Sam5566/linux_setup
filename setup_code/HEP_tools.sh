@@ -7,8 +7,19 @@ echo "    Getting root..."
 
 cd ~/Downloads
 
-wget -c https://root.cern/download/root_v6.20.04.Linux-ubuntu18-x86_64-gcc7.5.tar.gz -O - | tar -xz -C ~/HEP_tools
-
+echo "which version of Ubuntu do you have?"
+read ans
+if [ $ans -eq 18.04 ];
+then
+    wget -c https://root.cern/download/root_v6.20.04.Linux-ubuntu18-x86_64-gcc7.5.tar.gz -O - | tar -xz -C ~/HEP_tools
+elif [ $ans -eq 20.04 ];
+then
+    wget -c https://root.cern/download/root_v6.22.00.Linux-ubuntu20-x86_64-gcc9.3.tar.gz -O - | tar -xz -C ~/HEP_tools
+else
+    echo "the version of your Linux can not in the library, please search the root installation file location @ https://ph-root-2.cern.ch/ and paste to here:"
+    read location
+    wget -c $location -O - | tar -xz -C ~/HEP_tools
+fi
 cd ~/linux_setup
 ##Reminder: if want the newest version of root, please go to "https://root.cern.ch/downloading-root"
 
@@ -27,7 +38,7 @@ echo "   installing MadGraph..."
 
 cd ~/Downloads
 
-wget -c https://launchpad.net/mg5amcnlo/2.0/2.7.x/+download/MG5_aMC_v2.7.3.tar.gz -O - | tar -xz -C ~/HEP_tools 
+wget -c https://launchpad.net/mg5amcnlo/2.0/2.7.x/+download/MG5_aMC_v2.7.3.tar.gz -O - | tar -xz -C ~/HEP_tools
 
 mv "$(find ~/HEP_tools -name "MG5_aMC*" -type d)" ~/HEP_tools/MG5_aMC
 

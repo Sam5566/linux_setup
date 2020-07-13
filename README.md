@@ -26,7 +26,7 @@ see [Selection](https://github.com/Sam5566/linux_setup#selection)
 cd linux_setup
 source cmake.sh
 ```
-or you already have package **make**, try
+or if you already have package **make**, try
 ```bash
 cd linux_setup
 make
