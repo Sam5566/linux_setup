@@ -1,0 +1,5 @@
+sudo fdisk -lu
+sudo gedit /etc/fstab 
+sudo cp /usr/share/systemd/tmp.mount /etc/systemd/system/ && sudo systemctl enable tmp.mount
+ 
+

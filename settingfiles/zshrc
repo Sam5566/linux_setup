@@ -143,3 +143,19 @@ export LIBRARY_PATH=$LIBRARY_PATH::/home/sam/local/gsl2.6/lib
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #source /home/sam/autojump/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/sam/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/sam/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/sam/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/sam/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
