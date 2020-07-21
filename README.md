@@ -86,7 +86,9 @@ There are many flie in folder **setup_code** and **settingfiles** and they are s
         * my own plotting header's file or code
     * MadGraph (version: MG5_aMC_v2_6_7)
     * GMCalc (version: 1.41)
-    * HEPfit
+    * HEPfit (still not do yet)
+* fortran
+    * gfortran
 * system
     * ssh
     * build-essential (including libc6-dev, libc-dev, gcc, g++, make, dpkg-dev)
@@ -95,7 +97,15 @@ There are many flie in folder **setup_code** and **settingfiles** and they are s
     * datathief
     * Dropbox
     * Onedrive
-    * Google Drive
-* library
+    * Google Drive (can be set in account in the setting of Ubuntu)
+* library   [still not do yet]
     * boost
     * GSL
+* dual_system (will ask question during installation)
+    * time syncronized problem
+* SSD_optimization
+    * turn off time-recording
+    * mount /tmp/ on RAM
+* touchpad
+    * fusuma
+    * my own **config.yml**
