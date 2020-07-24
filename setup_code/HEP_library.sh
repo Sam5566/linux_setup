@@ -11,6 +11,7 @@
 #[---------------Place to change location-------------------------]#
 # unzip path [default: ~/library/]
 unzip_path=~/library
+mkdir $unzip_path
 # Installation path [default: /usr/local/]
 location=/usr/local/
 
@@ -18,6 +19,7 @@ echo "    Starting to install coding library..."
 echo "the libraries will be unziped in $unzip_path, and installed in $location"
 
 # install GSL
+cd ~/Downloads/
 echo "    Installing GSL in $location"
 echo "Opening the download page for GSL..."
 firefox ftp.twaren.net/Unix/GNU/gnu/gsl/
@@ -30,6 +32,7 @@ sudo make
 sudo make install
 
 # install boost
+cd ~/Downloads/
 echo "    Installing boost in $location"
 echo "Opening the download page for BOOST..."
 firefox https://www.boost.org/
@@ -43,6 +46,7 @@ sudo ./b2 install
 
 
 # install MPI
+cd ~/Downloads/
 echo "    Installing OpenMPI in $location"
 echo "Opening the download page for OpenMPI..."
 firefox https://www.open-mpi.org/
