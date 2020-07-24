@@ -1,4 +1,4 @@
-＃ time sycronization should be done if two systems are mounted in the same disk
+# time sycronization should be done if two systems are mounted in the same disk
 echo "Is two system mounted in the same disk?[y/n]"
 read sys_num
 if [ ${sys_num} = y -o "${sys_num}" = "yes" ];

@@ -23,7 +23,7 @@ echo "Opening the download page for GSL..."
 firefox ftp.twaren.net/Unix/GNU/gnu/gsl/
 echo "Please enter the website for downloading the lastet GSL *tar.gz* file in this website"
 read gsl_url
-wget -c $gsl_url -O | tar -xz -C $unzip_path
+wget -c $gsl_url -O - | tar -xz -C $unzip_path
 cd $unzip_path/gsl*
 sudo ./configure --prefix=$location
 sudo make
@@ -35,7 +35,7 @@ echo "Opening the download page for BOOST..."
 firefox https://www.boost.org/
 echo "Please enter the website for downloading the lastest BOOST *tar.gz* file in this website"
 read boost_url
-wget -c $boost_url -O | tar -xz -C $unzip_path
+wget -c $boost_url -O - | tar -xz -C $unzip_path
 cd $unzip_path/boost*
 sudo ./configure --prefix=$location
 sudo ./bootstrap.sh --prefix=$location
@@ -48,7 +48,7 @@ echo "Opening the download page for OpenMPI..."
 firefox https://www.open-mpi.org/
 echo "Please enter the website for downloading the lastest OPENMPI *tar.gz* file in this website"
 read mpi_url
-wget -c $mpi_url -O |tar -xz -C $unzip_path
+wget -c $mpi_url -O - |tar -xz -C $unzip_path
 cd $unzip_path/*mpi*
 sudo ./configure --prefix=$location
 sudo make all install
