@@ -1,0 +1,24 @@
+EXE=analysis
+
+CXX=/usr/local/lib/bin/mpicxx
+
+CXXFLAGS=-Wall -O3 -DNDEBUG
+CXXFLAGS+=`/home/sam/HEP_tools/HEPfit-1.0/build/HEPfit/bin/hepfit-config --cflags`
+CXXFLAGS+=-I/home/sam/HEP_tools/HEPfit-1.0/build/BAT/include -D_MPI -I/usr/local/include
+CXXFLAGS+=`/home/sam/HEP_tools/root/bin/root-config --cflags`
+CXXFLAGS+=`/usr/local/bin/gsl-config --cflags`
+
+LIBS=`/home/sam/HEP_tools/HEPfit-1.0/build/HEPfit/bin/hepfit-config --libs`
+LIBS+=-L/home/sam/HEP_tools/HEPfit-1.0/build/BAT/lib -lBATmodels -lBAT
+LIBS+=`/home/sam/HEP_tools/root/bin/root-config --libs`
+LIBS+=`/home/sam/HEP_tools/root/bin/root-config --ldflags`
+LIBS+=`/usr/local/bin/gsl-config --libs`
+LIBS+=-Wl,-rpath,/home/sam/HEP_tools/HEPfit-1.0/build/BAT/lib -Wl,-rpath,/usr/local/lib/lib -Wl,-rpath,/home/sam/HEP_tools/root/lib -Wl,-rpath,/usr/local/lib,-lMinuit
+
+all: $(EXE)
+
+$(EXE): MCMC.cpp Makefile
+	$(CXX) $(CXXFLAGS) -o $@ $< $(LIBS)
+
+clean:
+	rm -f $(EXE)
