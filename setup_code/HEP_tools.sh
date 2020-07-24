@@ -63,7 +63,7 @@ echo "Opening the download page for Hepfit..."
 firefox https://hepfit.roma1.infn.it/
 echo "Please enter the website for downloading the lastet Hepfit *tar.gz* file in this website"
 read hepfit_url
-wget -c $hepfit_url -O | tar -xz -C ~/HEP_tools/
+wget -c $hepfit_url -O - | tar -xz -C ~/HEP_tools/
 mv "$(find ~/HEP_tools -name "HEPfit*" -type d)" ~/HEP_tools/HEPfit
 mkdir ~/HEP_tools/HEPfit/build
 cd ~/HEP_tools/HEPfit/build

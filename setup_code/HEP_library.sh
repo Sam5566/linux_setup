@@ -18,7 +18,7 @@ location=/usr/local/
 echo "    Starting to install coding library..."
 echo "the libraries will be unziped in $unzip_path, and installed in $location"
 
-# install GSL
+# GSL
 cd ~/Downloads/
 echo "    Installing GSL in $location"
 echo "Opening the download page for GSL..."
@@ -27,11 +27,12 @@ echo "Please enter the website for downloading the lastet GSL *tar.gz* file in t
 read gsl_url
 wget -c $gsl_url -O - | tar -xz -C $unzip_path
 cd $unzip_path/gsl*
+## gsl install
 sudo ./configure --prefix=$location
 sudo make
 sudo make install
 
-# install boost
+# boost
 cd ~/Downloads/
 echo "    Installing boost in $location"
 echo "Opening the download page for BOOST..."
@@ -40,12 +41,12 @@ echo "Please enter the website for downloading the lastest BOOST *tar.gz* file i
 read boost_url
 wget -c $boost_url -O - | tar -xz -C $unzip_path
 cd $unzip_path/boost*
-sudo ./configure --prefix=$location
+## boost install
 sudo ./bootstrap.sh --prefix=$location
 sudo ./b2 install
 
 
-# install MPI
+# MPI
 cd ~/Downloads/
 echo "    Installing OpenMPI in $location"
 echo "Opening the download page for OpenMPI..."
@@ -54,6 +55,10 @@ echo "Please enter the website for downloading the lastest OPENMPI *tar.gz* file
 read mpi_url
 wget -c $mpi_url -O - |tar -xz -C $unzip_path
 cd $unzip_path/*mpi*
+## mpi install
 sudo ./configure --prefix=$location
 sudo make all install
+
+echo FINISH
 source ~/.zshrc
+cd ~/linux_setup/
