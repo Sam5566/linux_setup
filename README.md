@@ -86,7 +86,8 @@ There are many flie in folder **setup_code** and **settingfiles** and they are s
         * my own plotting header's file or code
     * MadGraph (version: MG5_aMC_v2_6_7)
     * GMCalc (version: 1.41)
-    * HEPfit (still not do yet)
+    * HEPfit (version: 1.0)
+        * correct Makefile for **MonteCarloMode/**
 * fortran
     * gfortran
 * system
@@ -98,9 +99,10 @@ There are many flie in folder **setup_code** and **settingfiles** and they are s
     * Dropbox
     * Onedrive
     * Google Drive (can be set in account in the setting of Ubuntu)
-* library   [still not do yet]
+* library
     * boost
     * GSL
+    * MPI
 * dual_system (will ask question during installation)
     * time syncronized problem
 * SSD_optimization
