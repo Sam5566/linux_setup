@@ -12,7 +12,7 @@
 # unzip path [default: ~/library/]
 unzip_path=~/library
 # Installation path [default: /usr/local/]
-location=/usr/local
+location=/usr/local/
 
 echo "    Starting to install coding library..."
 echo "the libraries will be unziped in $unzip_path, and installed in $location"
