@@ -58,7 +58,10 @@ cd $unzip_path/*mpi*
 ## mpi install
 sudo ./configure --prefix=$location
 sudo make all install
+source ~/.zshrc
+## mpi check
+sudo ldconfig
+mpirun
 
 echo FINISH
-source ~/.zshrc
 cd ~/linux_setup/

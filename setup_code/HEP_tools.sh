@@ -67,7 +67,7 @@ wget -c $hepfit_url -O - | tar -xz -C ~/HEP_tools/
 mv "$(find ~/HEP_tools -name "HEPfit*" -type d)" ~/HEP_tools/HEPfit
 mkdir ~/HEP_tools/HEPfit/build
 cd ~/HEP_tools/HEPfit/build
-cmake .. -DLOCAL_INSTALL_ALL=ON -DMPIBAT=ON -DMPI_CXX_COMPILER=/usr/local/lib/bin/mpicxx
+cmake .. -DLOCAL_INSTALL_ALL=ON -DMPIBAT=ON -DMPI_CXX_COMPILER=/usr/local/bin/mpicxx
 make
 make install
 
@@ -87,3 +87,4 @@ mpiexec -n $Ncore ./analysis ../config/StandardModel.conf MonteCarlo.conf
 echo ---------------------------------------------------------------------
 
 echo FINISH
+cd ~/linux_setup
