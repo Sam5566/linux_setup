@@ -39,7 +39,7 @@ source check.sh
 ```
 
 ## Selection
-There are many flie in folder **setup_code** and **settingfiles** and they are show below under [Warning](https://github.com/Sam5566/linux_setup#warning). If you do not want such app/setup just remove the file with the same name from those folder. If something you don't want is only a part of the file, just go into that setup file and comment the line. Each part of installation should be seperated and easy to reconized.
+There are many flie in folder **setup_code** and **settingfiles** and they are show below in [setupcode](https://github.com/Sam5566/linux_setup#setup code). If you do not want such app/setup just remove the file with the same name from those folder. If something you don't want is only a part of the file, just go into that setup file and comment the line. Each part of installation should be seperated and easy to reconized.
 #### warning
 Due to the convention, some rules need to be follow, otherwise, you will face some problems and need to fix by yourself.
 1. All the setting are set under zsh, so if you don't want to use ZSH as your terminal, you need to copy some lines in **.zshrc** to your own **.bashrc**.
@@ -48,8 +48,10 @@ Due to the convention, some rules need to be follow, otherwise, you will face so
 source ~/.zshrc
 ```
 to check whether there are some setting not use but exists in **.zshrc**.
+
 3. python installation are mainly for those who use more python 2. If you just need to use python regardless the version, take anaconda only would be better.
 
+####setup code
 * terminal: to make the terminal more beautiful, more easy to look and help user execute the shell
 	* zsh
 	* oh my zsh
@@ -113,3 +115,6 @@ to check whether there are some setting not use but exists in **.zshrc**.
 * touchpad
     * fusuma
     * my own **config.yml**
+
+# Copyright
+This package is use to install some useful package and app and not for sell. Just in case, here I still mention their coming
