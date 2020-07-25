@@ -39,7 +39,16 @@ source check.sh
 ```
 
 ## Selection
-There are many flie in folder **setup_code** and **settingfiles** and they are show below. If you do not want such app/setup just remove the file with the same name from those folder. If something you don't want is only a part of the file, just go into that setup file and comment the line. Each part of installation should be seperated and easy to reconized.
+There are many flie in folder **setup_code** and **settingfiles** and they are show below under [Warning](https://github.com/Sam5566/linux_setup#warning). If you do not want such app/setup just remove the file with the same name from those folder. If something you don't want is only a part of the file, just go into that setup file and comment the line. Each part of installation should be seperated and easy to reconized.
+#### warning
+Due to the convention, some rules need to be follow, otherwise, you will face some problems and need to fix by yourself.
+1. All the setting are set under zsh, so if you don't want to use ZSH as your terminal, you need to copy some lines in **.zshrc** to your own **.bashrc**.
+2. If you take ZSH, but do not take every installation in this package, use source
+```
+source ~/.zshrc
+```
+to check whether there are some setting not use but exists in **.zshrc**.
+3. python installation are mainly for those who use more python 2. If you just need to use python regardless the version, take anaconda only would be better.
 
 * terminal: to make the terminal more beautiful, more easy to look and help user execute the shell
 	* zsh
@@ -47,13 +56,13 @@ There are many flie in folder **setup_code** and **settingfiles** and they are s
 	* powerline
     * powerlevel9k
     * poewrlevel10k
-	* autojump
+	* autojump ( need python to install, so you need to use run terminal installation at least twice)
 	* syntex_highlight
     * zsh-autosuggestions
 	* my own **.zshrc**
 * vim: installation and to make the terminal more beautiful, more easy to look and help user type the code
 	* my own **.vimrc**
-* python: installation of Python2 and Python3 (to-dated) and their packages
+* python: installation of Python2 and Python3 (to-date) and their packages
     * python (version 2.7)
     * python3 (version 3.7)
     * Numpy
@@ -64,13 +73,13 @@ There are many flie in folder **setup_code** and **settingfiles** and they are s
     * pandas
     * sympy
     * nose
-* anaconda: installation of Anaconda and Python 3 (to-updated) and the packages of
+* anaconda: installation of Anaconda and Python 3 (to-date) and the packages of
 	* Numpy
 	* Matplotlib
 	* SciPy
 	* keras
 	* tensorflow
-* GCC: installation of compiler (auto detect to avoid install again)
+* C_compiler: installation of compiler (auto detect to avoid install again)
 
 * mathematica: Installation (still not do yet)
 * HEP_tools: High Energy Physics analysis packages
@@ -92,7 +101,7 @@ There are many flie in folder **setup_code** and **settingfiles** and they are s
     * Dropbox
     * Onedrive
     * Google Drive (can be set in account in the setting of Ubuntu)
-* C_library
+* C_library (default unzip in /home/user/library and install in /usr/local. you can change the pathes in the installation file)
     * boost
     * GSL
     * MPI
