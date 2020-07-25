@@ -117,4 +117,4 @@ to check whether there are some setting not use but exists in **.zshrc**.
     * my own **config.yml**
 
 # Copyright
-This package is use to install some useful package and app and not for sell. Just in case, here I still mention their coming
+This package is use to install some useful packages and apps and not for sell. Just in case, here I still mention their coming
