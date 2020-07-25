@@ -51,7 +51,7 @@ to check whether there are some setting not use but exists in **.zshrc**.
 
 3. python installation are mainly for those who use more python 2. If you just need to use python regardless the version, take anaconda only would be better.
 
-####setup code
+#### setup code
 * terminal: to make the terminal more beautiful, more easy to look and help user execute the shell
 	* zsh
 	* oh my zsh
