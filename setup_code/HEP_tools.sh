@@ -78,7 +78,9 @@ echo "    The version of HEPfit can be found in the file in the Dir."
 echo "******************************************************"
 echo "    check Monte Carlo mode is able to run..."
 cd example/MonteCarloMode/
-cp ~/linux_setup/settingfiles/Makefile_of_HEPfit Makefile
+echo "Opening Makefile..."
+echo " please add ',-Minuit' at the end of the line 16 in Makefile
+gedit Makefile
 make
 echo "***Warning: please make sure that the root is able to open"
 echo "How many cores in your CPU?"

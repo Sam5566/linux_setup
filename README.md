@@ -31,7 +31,7 @@ or if you already have package **make**, try
 cd linux_setup
 make
 ```
-#### check
+#### check (still not do yet)
 If all you want in **setup_code** are installed or cloned sucessfully, the check part will start automatically to make sure again all of them can be called. As long as the installation is without problem, it shows "pass" in the terminal. No matter the installation is sucessful or not, all messages will go into **setup_logs.txt**.
 This can be done in **linux setup** by
 ```bash
@@ -53,19 +53,12 @@ There are many flie in folder **setup_code** and **settingfiles** and they are s
 	* my own **.zshrc**
 * vim: installation and to make the terminal more beautiful, more easy to look and help user type the code
 	* my own **.vimrc**
-* python2: installation of the Python 2 (to-updated) and the packages of
-	* Numpy
-	* Matplotlib
-	* SciPy
-    * ipython
-    * jupyter
-    * pandas
-    * sympy
-    * nose
-* python3: installation of the Python 3 (to-updated) and the packages of
-	* Numpy
-	* Matplotlib
-	* SciPy
+* python: installation of Python2 and Python3 (to-dated) and their packages
+    * python (version 2.7)
+    * python3 (version 3.7)
+    * Numpy
+    * Matplotlib
+    * SciPy
     * ipython
     * jupyter
     * pandas
@@ -77,9 +70,9 @@ There are many flie in folder **setup_code** and **settingfiles** and they are s
 	* SciPy
 	* keras
 	* tensorflow
-* GCC: installation of compiler (already include in system_setup: build-essential, the shell script here is to only install GCC)
+* GCC: installation of compiler (auto detect to avoid install again)
 
-* mathematica: Installation (need to be verified with code)
+* mathematica: Installation (still not do yet)
 * HEP_tools: High Energy Physics analysis packages
     * root: (version 6.20)
         * my own **.rootrc**
@@ -94,16 +87,16 @@ There are many flie in folder **setup_code** and **settingfiles** and they are s
     * ssh
     * build-essential (including libc6-dev, libc-dev, gcc, g++, make, dpkg-dev)
     * cmake
-* application(app)
+* application (still not do yet)
     * datathief
     * Dropbox
     * Onedrive
     * Google Drive (can be set in account in the setting of Ubuntu)
-* library
+* C_library
     * boost
     * GSL
     * MPI
-* dual_system (will ask question during installation)
+* dual_system (will let you confirm during installation)
     * time syncronized problem
 * SSD_optimization
     * turn off time-recording
