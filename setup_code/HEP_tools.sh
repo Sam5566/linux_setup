@@ -4,7 +4,10 @@ mkdir ~/HEP_tools/zshconfig
 
 # root
 echo "    Getting root..."
-
+echo "checking root is installed or not..."
+start_root
+root --version
+if [ $? -ne 0 ]; then
 cd ~/Downloads
 
 echo "which version of Ubuntu do you have? 18 or 20"
@@ -32,10 +35,13 @@ start_root
 root -q
 echo ----------------------------
 
+else
+    echo "root is already installed"
+fi
+
 
 # MadGraph
 echo "   installing MadGraph..."
-
 cd ~/Downloads
 
 wget -c https://launchpad.net/mg5amcnlo/2.0/2.7.x/+download/MG5_aMC_v2.7.3.tar.gz -O - | tar -xz -C ~/HEP_tools
@@ -81,8 +87,8 @@ echo "******************************************************"
 echo "    check Monte Carlo mode is able to run..."
 cd ~/HEP_tools/HEPfit/build/examples/MonteCarloMode/
 echo "Opening Makefile..."
-echo " please add ',-Minuit' at the end of the line 16 in Makefile
-gedit Makefile"
+echo " please add ',-Minuit' at the end of the line 16 in Makefile"
+gedit Makefile
 make
 echo "***Warning: please make sure that the root is able to open"
 echo "How many cores in your CPU?"
