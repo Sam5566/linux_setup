@@ -88,7 +88,8 @@ echo "    check Monte Carlo mode is able to run..."
 cd ~/HEP_tools/HEPfit/build/examples/MonteCarloMode/
 echo "Opening Makefile..."
 echo " please add ',-Minuit' at the end of the line 16 in Makefile"
-gedit Makefile
+sed -e -i '16 s/$/,-lMinuit/g' ~/HEP_tools/HEPfit-1.0/build/examples/MonteCarloMode/Makefile
+
 make
 echo "***Warning: please make sure that the root is able to open"
 echo "How many cores in your CPU?"
