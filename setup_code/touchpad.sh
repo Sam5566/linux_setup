@@ -5,7 +5,7 @@ sudo gem install fusuma
 sudo apt-get install xdotool
 gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
 
-fusuma
+##fusuma
 
 mkdir -p ~/.config/fusuma
 cp settingfiles/config/fusuma/config.yml ~/.config/fusuma/config.yml

@@ -3,8 +3,9 @@ SHELL := /bin/bash
 DIR = setup_code
 FILES = ${DIR}/*.sh
 all:
-	@echo "Searing files in ${DIR}...";
+	@echo "Searching files in ${DIR}...";
 	@echo ${FILES};
+
 	@for FILE in ${FILES}; do \
 		echo -e "\033[34m Set up $$FILE\033[0m" ; \
 		source $${FILE}; \
