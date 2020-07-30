@@ -68,6 +68,8 @@ mv "$(find ~/HEP_tools -name "HEPfit*" -type d)" ~/HEP_tools/HEPfit
 mkdir ~/HEP_tools/HEPfit/build
 cd ~/HEP_tools/HEPfit/build
 cmake .. -DLOCAL_INSTALL_ALL=ON -DMPIBAT=ON -DMPI_CXX_COMPILER=/usr/local/bin/mpicxx
+cp ~/linux_setup/settingfiles/ThObsFactory.cpp.o ~/HEP_tools/HEPfit/build/InputParser/CMakeFiles/InputParser.dir/src/
+cp ~/linux_setup/settingfiles/SUSYMatching.cpp.o ~/HEP_tools/HEPfit/build/SUSY/CMakeFiles/SUSY.dir/src/
 make
 make install
 
@@ -77,10 +79,10 @@ echo "    Change HEPfit directory from HEPfit-x.x to HEPfit"
 echo "    The version of HEPfit can be found in the file in the Dir."
 echo "******************************************************"
 echo "    check Monte Carlo mode is able to run..."
-cd example/MonteCarloMode/
+cd ~/HEP_tools/HEPfit/build/examples/MonteCarloMode/
 echo "Opening Makefile..."
 echo " please add ',-Minuit' at the end of the line 16 in Makefile
-gedit Makefile
+gedit Makefile"
 make
 echo "***Warning: please make sure that the root is able to open"
 echo "How many cores in your CPU?"
