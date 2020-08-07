@@ -26,11 +26,17 @@ see [Selection](https://github.com/Sam5566/linux_setup#selection)
 cd linux_setup
 source cmake.sh
 ```
-or if you already have package **make**, try
+we have already embed essential rebooting in the program, so if you do not see the message
+```bash
+Finish all installation--> final reboot[ENTER]
+```
+,then execute following lines
 ```bash
 cd linux_setup
 make
 ```
+to get all packages installed.
+
 #### check (still not do yet)
 If all you want in **setup_code** are installed or cloned sucessfully, the check part will start automatically to make sure again all of them can be called. As long as the installation is without problem, it shows "pass" in the terminal. No matter the installation is sucessful or not, all messages will go into **setup_logs.txt**.
 This can be done in **linux setup** by

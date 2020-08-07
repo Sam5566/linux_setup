@@ -8,7 +8,7 @@ all:
 
 	@for FILE in ${FILES}; do \
 		echo -e "\033[34m Set up $$FILE\033[0m" ; \
-		source $${FILE}; \
+		#source $${FILE}; \
 		echo ........................... ; \
 		echo ........................... ; \
 		echo ........................... ; \
@@ -18,3 +18,7 @@ all:
 	@echo ////////////////////////////// ;
 	@echo ////////////////////////////// ;
 	@source check.sh
+
+	@echo "Finish all installation--> final reboot[ENTER]";
+	@read
+	@sudo reboot now
