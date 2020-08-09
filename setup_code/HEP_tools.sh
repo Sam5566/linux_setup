@@ -89,7 +89,7 @@ cd ~/HEP_tools/HEPfit/build/examples/MonteCarloMode/
 
 if [ ! $(grep ",-lMinuit" ~/HEP_tools/HEPfit-1.0/build/examples/MonteCarloMode/Makefile) ]; then
     echo "Adding ',-Minuit' at the end of the line 16 in Makefile"
-    sed -i -e '16 s/$/,-lMinuit/g' ~/HEP_tools/HEPfit-1.0/build/examples/MonteCarloMode/Makefile
+    sed -i -e '16 s/$/,-lMinuit/g' ~/HEP_tools/HEPfit/build/examples/MonteCarloMode/Makefile
 fi
 
 make

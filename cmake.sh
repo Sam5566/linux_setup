@@ -23,12 +23,14 @@ do
     source $FILE
 
     if [ "$FILE" = "setup_code/anaconda_setup.sh" -a $choice -eq 1 ]; then
-        mv setup_code/anaconda_setup.sh setup_code/anaconda_finish.sh
+        mv setup_code/anaconda_setup.sh setup_code/anaconda_finish
         sudo reboot now
     elif [ "$FILE" = "setup_code/1_terminal_setup.sh" -a $choice -eq 2 ]; then
         sudo reboot now
     elif [ "$FILE" = "setup_code/anaconda_setup.sh" -a $choice -eq 3 ]; then
-        mv setup_code/anaconda_setup.sh setup_code/anaconda_finish.sh
+        mv setup_code/anaconda_setup.sh setup_code/anaconda_finish
+        echo "rebooting...[ENTER]"
+        read
         sudo reboot now
     fi
 
