@@ -5,7 +5,7 @@ echo "As long as the shell script file is downloaded in ~/Downloads,"
 echo "Press ENTER"
 firefox "https://drive.google.com/u/1/uc?export=download&confirm=qApe&id=1Hhy8ejKFfPZ298CsFM4ZDWRqbOKra7LQ"
 read c
-#sudo bash Mathematica*.sh
+sudo bash Mathematica*.sh
 cd ~/linux_setup
 echo "---------------------------------------------------------"
 echo "NOTICE: Please break the Mathematica by following step"
