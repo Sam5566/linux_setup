@@ -74,8 +74,10 @@ mv "$(find ~/HEP_tools -name "HEPfit*" -type d)" ~/HEP_tools/HEPfit
 mkdir ~/HEP_tools/HEPfit/build
 cd ~/HEP_tools/HEPfit/build
 cmake .. -DLOCAL_INSTALL_ALL=ON -DMPIBAT=ON -DMPI_CXX_COMPILER=/usr/local/bin/mpicxx
-cp ~/linux_setup/settingfiles/ThObsFactory.cpp.o ~/HEP_tools/HEPfit/build/InputParser/CMakeFiles/InputParser.dir/src/
-cp ~/linux_setup/settingfiles/SUSYMatching.cpp.o ~/HEP_tools/HEPfit/build/SUSY/CMakeFiles/SUSY.dir/src/
+cp ~/linux_setup/settingfiles/HEPfit_fix_files/ThObsFactory.cpp.o ~/HEP_tools/HEPfit/build/InputParser/CMakeFiles/InputParser.dir/src/
+cp ~/linux_setup/settingfiles/HEPfit_fix_files/SUSYMatching.cpp.o ~/HEP_tools/HEPfit/build/SUSY/CMakeFiles/SUSY.dir/src/
+cp ~/linux_setup/settingfiles/HEPfit_fix_files/GMcache.cpp ~/HEP_tools/HEPfit/build/GeorgiMachacek/src/
+cp ~/linux_setup/settingfiles/HEPfit_fix_files/MonteCarlo.cpp ~/HEPfit_tools/HEPfit/build/MonteCarlo.src/
 make
 make install
 
