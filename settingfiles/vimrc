@@ -46,11 +46,12 @@ Plug 'scrooloose/nerdtree'
 " Paint css colors with the real color
 Plug 'lilydjwg/colorizer'
 " Rainbow parentheses
-Plug 'luochen1990/rainbow'
+"Plug 'luochen1990/rainbow'
+Plug 'kien/rainbow_parentheses.vim'
 " Commentary
-"Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 " Bracket Surround
-"Plug 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 " Indent Line
 Plug 'Yggdroot/indentLine'
 " Syntax check
@@ -58,7 +59,15 @@ Plug 'scrooloose/syntastic'
 " Tabs
 Plug 'kien/tabman.vim'
 " Auto completion
-"Plug 'ycm-core/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe'
+" Auto pairs
+Plug 'jiangmiao/auto-pairs'
+" Air-line
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+
+
 
 " Plugins from github/vim-scripts repos:
 "*************************************************
@@ -114,8 +123,7 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 " Rainbow parentheses ------------------
 " don;t enable when start up
-let g:rainbow_active = 1
-"map <F5> :RainbowToggle<CR>
+autocmd VimEnter * RainbowParenthesesToggle
 
 " Indent Line --------------------------
 let g:indentLine_enabled = 0
@@ -206,6 +214,7 @@ function RemoveTrailingWhitespace()
         let b:curline = line(".")
         silent! %s/\s\+$//
         silent! %s/\(\s*\n\)\+\%$//
+
         call cursor(b:curline, b:curcol)
     endif
 endfunction
@@ -245,6 +254,16 @@ inoremap "" ""<esc>i
 inoremap ''' '''<cr>'''<esc>i<esc>i<esc>i
 inoremap """ """<cr>"""<esc>i<esc>i<esc>i
 
+" execute scripts in vim
+filetype plugin on
+""" 按 F5 执行当前 Python 代码"
+map <F9> :call PRUN()<CR>
+func! PRUN()
+    exec "w"
+    if &filetype == 'python'
+        exec "!python %"
+    endif
+endfunc
 " Run python script in vim
 " # Test python version that want (In python)
 " import sys
@@ -253,3 +272,34 @@ autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%,
 autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 "autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python2' shellescape(@%, 1)<CR>
 "autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python2' shellescape(@%, 1)<CR>
+"
+"
+"YouCompleteMe
+let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+let g:ycm_key_invoke_completion = '<c-z>'
+let g:ycm_filetype_whitelist = {
+			\ "c":1,
+			\ "cpp":1,
+			\ "objc":1,
+            \ "py":1,
+			\ "sh":1,
+			\ "zsh":1,
+			\ "zimbu":1,
+			\ }
+
+
+" when create a new script, note the copyright
+autocmd BufNewFile *.cpp,*.c,*.py,*.sh exec ":call SetTitle()"
+    func SetTitle()
+        call setline(1,"/**")
+        call append(line("."), " *   Copyright (C) ".strftime("%Y")." All rights reserved.")
+        call append(line(".")+1, " *")
+        call append(line(".")+2, " *   FileName      ：".expand("%:t"))
+        call append(line(".")+3, " *   Author        ：Cheng-Tse Sam Huang")
+        call append(line(".")+4, " *   Email         ：samhuang87@gmail.com")
+        call append(line(".")+5, " *   Date          ：".strftime("%m/%d/%Y"))
+        call append(line(".")+6, " *   Description   ：")
+        call append(line(".")+7, " */")
+    endfunc
+"automatically move highlight to the end of the line"
+autocmd BufNewFile * normal G
