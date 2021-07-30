@@ -57,7 +57,7 @@ to check whether there are some setting not use but exists in **.zshrc**.
 
 3. python installation are mainly for those who use more python 2. If you just need to use python regardless the version, take anaconda only would be better.
 
-#### setup code
+#### setup code [To-do]
 * terminal: to make the terminal more beautiful, more easy to look and help user execute the shell
 	* zsh
 	* oh my zsh
@@ -68,9 +68,9 @@ to check whether there are some setting not use but exists in **.zshrc**.
 	* syntex_highlight
     * zsh-autosuggestions
 	* my own **.zshrc**
-* vim: installation and to make the terminal more beautiful, more easy to look and help user type the code
+* vim: installation and to make the terminal more beautiful, more easy to look and help user type the code [not just vimrc but also other configuration for different filetype]
 	* my own **.vimrc**
-* python: installation of Python2 and Python3 (to-date) and their packages
+* python: installation of Python2 and Python3 (to-date) and their packages [should not be used; can totally cover by pip inside conda]
     * python (version 2.7)
     * python3 (version 3.7)
     * Numpy
@@ -81,13 +81,13 @@ to check whether there are some setting not use but exists in **.zshrc**.
     * pandas
     * sympy
     * nose
-* anaconda: installation of Anaconda and Python 3 (to-date) and the packages of
+* anaconda: installation of Anaconda and Python 3 (to-date) and the packages of [Maybe can construct env directly]
 	* Numpy
 	* Matplotlib
 	* SciPy
 	* keras
 	* tensorflow
-* C_compiler: installation of compiler (auto detect to avoid install again)
+* C_compiler: installation of compiler (auto detect to avoid install again) [considering cling]
 
 * mathematica: Installation (still not do yet)
 * HEP_tools: High Energy Physics analysis packages
@@ -100,7 +100,7 @@ to check whether there are some setting not use but exists in **.zshrc**.
         * correct Makefile for **MonteCarloMode/**
 * fortran
     * gfortran
-* system
+* system [htop, trash-cli]
     * ssh
     * build-essential (including libc6-dev, libc-dev, gcc, g++, make, dpkg-dev)
     * cmake
