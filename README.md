@@ -121,6 +121,6 @@ to check whether there are some setting not use but exists in **.zshrc**.
 * touchpad
     * fusuma
     * my own **config.yml**
-
+* sound system [need to change vim /usr/share/alsa/alsa.conf, defaults.pcm.dmix.rate 48000-->44100]
 # Copyright
 This package is use to install some useful packages and apps and not for sell. Just in case, here I still mention their coming
