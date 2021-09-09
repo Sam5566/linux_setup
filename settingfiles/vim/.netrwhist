@@ -1,0 +1,4 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/sam/Dropbox/NTU_GM_HEPfit_study/code/hist/vDelta_vs_alpha'
+let g:netrw_dirhist_1='/home/sam/Downloads/try/GM001'

@@ -113,6 +113,11 @@ alias start_root="source ~/HEP_tools/root/bin/thisroot.sh"
 ## start NTU VPN
 alias start_NTU_VPN="/usr/local/pulse/pulseUi"
 
+## ssh
+alias JNtwcc32="ssh -N -f -L 18888:127.0.0.1:8881 twcc32"
+
+## airplay
+alias airplay="./uxplay"
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
